@@ -361,7 +361,6 @@ void HeroMovementController::moveOnce(const CGHeroInstance * h, const CGPath & p
 		stopMovementSound();
 		logGlobal->trace("Requesting hero teleportation to %s", nextNode.coord.toString());
 		LOCPLINT->cb->moveHero(h, h->pos, false);
-		return;
 	}
 	else
 	{
@@ -373,6 +372,5 @@ void HeroMovementController::moveOnce(const CGHeroInstance * h, const CGPath & p
 
 		bool useTransit = nextNode.layer == EPathfindingLayer::AIR || nextNode.layer == EPathfindingLayer::WATER;
 		LOCPLINT->cb->moveHero(h, nextCoord, useTransit);
-		return;
 	}
 }
